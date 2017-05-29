@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html ng-app="demo">
+<head>
+    <title>searchMultiSelect Editor Demo</title>
+    <link rel="stylesheet" type="text/css" href="demo.css"/>
+</head>
+<body>
+
+<div class="main" ng-controller="DemoController">
+    <global-loading  loading-config="loadingConfig" ></global-loading>
+    <div>＊＊ 试验前，可以先打开调试器的network，以看到更好的试验效果 ＊＊</div>
+    <button ng-click="sendHttpRequest()">1. 发起一个http请求(注：设置5s超时,可通过控制台看到报错信息)</button>
+    <button ng-click="getFile()">2. 获取本地文件(注：必然成功的请求，且loading一闪即逝)</button>
+    <button ng-click="sendExcludeHttpRequest()">3. 发起一个被排除的http请求（注：由于被排除，所以不会出现loading）</button>
+</div>
+<script type="text/javascript" src="jquery/dist/jquery.min.js"></script>
+<script type="text/javascript" src="angular/angular.min.js"></script>
+<script type="text/javascript" src="js/angular-global-loading.js"></script>
+<script type="text/javascript" src="demo.js"></script>
+
+</body>
+</html>

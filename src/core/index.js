@@ -16,14 +16,7 @@ module.exports = function(mod) {
 
 				var pendingLength = 0,
 					i, l, apiObj;
-				if(typeof scope.loadingConfig.timeout === 'number') {
-					$timeout(function() {
-						if (pendingLength > 0) {
-							elm.hide();
-							console.error('请求超时');
-						}
-					}, scope.loadingConfig.timeout);
-				}
+
 				scope.isLoading = function () {
 					pendingLength = $http.pendingRequests.length;
 
@@ -38,8 +31,24 @@ module.exports = function(mod) {
 					return pendingLength > 0;
 				};
 
+				/*
+				*  isLoading fn  gets called multiple times per digest,
+				* the watch callback will be called when the isLoading fn's return value changes.
+				*
+				* */
 				scope.$watch(scope.isLoading, function (v)
 				{
+                    if(typeof scope.loadingConfig.timeout === 'number') {
+                        $timeout(function() {
+                            if (pendingLength > 0) {
+                                elm.hide();
+                                $http.pendingRequests = [];
+                                if (typeof scope.loadingConfig.timeoutCallback === 'function') {
+                                    scope.loadingConfig.timeoutCallback();
+								}
+                            }
+                        }, scope.loadingConfig.timeout);
+                    }
 					if(v){
 						elm.show();
 					}else{
