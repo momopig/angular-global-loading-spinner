@@ -41,7 +41,7 @@ module.exports = function(mod) {
                     if(typeof scope.loadingConfig.timeout === 'number') {
                         $timeout(function() {
                             if (pendingLength > 0) {
-                                elm.hide();
+							$(elm).hide();
                                 $http.pendingRequests = [];
                                 if (typeof scope.loadingConfig.timeoutCallback === 'function') {
                                     scope.loadingConfig.timeoutCallback();
@@ -50,9 +50,9 @@ module.exports = function(mod) {
                         }, scope.loadingConfig.timeout);
                     }
 					if(v){
-						elm.show();
+						$(elm).show();
 					}else{
-						elm.hide();
+                        $(elm).hide();
 					}
 				});
 			}
