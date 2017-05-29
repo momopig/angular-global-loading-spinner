@@ -40,6 +40,7 @@ module.exports = function(mod) {
 				{
                     if(typeof scope.loadingConfig.timeout === 'number') {
                         $timeout(function() {
+                            var pendingLength = $http.pendingRequests.length;
                             if (pendingLength > 0) {
 							$(elm).hide();
                                 $http.pendingRequests = [];
