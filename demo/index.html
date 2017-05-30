@@ -1,22 +1,26 @@
 <!DOCTYPE html>
 <html ng-app="demo">
 <head>
-    <title>searchMultiSelect Editor Demo</title>
+    <title>angular-global-loading</title>
     <link rel="stylesheet" type="text/css" href="demo.css"/>
 </head>
 <body>
-
-<div class="main" ng-controller="DemoController">
-    <global-loading  loading-config="loadingConfig" ></global-loading>
-    <div>＊＊ In order to  observe the effect of experiment in a better way, you should turn on the network tab of console  ＊＊</div>
-    <button ng-click="sendHttpRequest()">1. send a http request(ps：set the timeout config as 5s, the timeout msgs will be shown in console)</button>
-    <button ng-click="getFile()">2. send a http request to get a local file(ps:，an invitably successful request, the loading style flashes out on the screen)</button>
-    <button ng-click="sendExcludeHttpRequest()">3. send an excluded http request（ps：Because the request has been excluded, the loading style will not be shown）</button>
-</div>
-<script type="text/javascript" src="jquery/dist/jquery.min.js"></script>
-<script type="text/javascript" src="angular/angular.min.js"></script>
-<script type="text/javascript" src="js/angular-global-loading.js"></script>
-<script type="text/javascript" src="demo.js"></script>
-
+    <div class="main" ng-controller="DemoController">
+        <global-loading  loading-config="loadingConfig" ></global-loading>
+        <div>＊＊ In order to  observe the effect of experiment in a better way, you should turn on the network tab of console  ＊＊</div>
+        <div>
+            <button ng-click="sendHttpRequest()">1. send a http request(ps：set the timeout config as 5s, the timeout msgs will be shown in console)</button>
+        </div>
+        <div>
+            <button ng-click="getFile()">2. send a http request to get a local file(ps:，an invitably successful request, the loading style flashes out on the screen)</button>
+        </div>
+        <div>
+            <button ng-click="sendExcludeHttpRequest()">3. send an excluded http request（ps：Because the request has been excluded, the loading style will not be shown）</button>
+        </div>
+    </div>
+    <script type="text/javascript" src="jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="angular/angular.min.js"></script>
+    <script type="text/javascript" src="js/angular-global-loading.js"></script>
+    <script type="text/javascript" src="demo.js"></script>
 </body>
 </html>
