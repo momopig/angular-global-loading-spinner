@@ -3,23 +3,29 @@ var style = require('./index.css');
 
 module.exports = function(mod) {
 
-	mod.directive('globalLoading', ['$http', '$timeout', '$rootScope', function($http, $timeout, $rootScope) {
+	mod.directive('globalLoading', ['$http', '$timeout', function($http, $timeout) {
 		return {
 			restrict: 'EA',
 			replace: true,
 			transclde: true,
 			template: tpl,
+			scope: {
+				loadingConfig: '='
+			},
 			link: function (scope, elm, attrs) {
 
 				var pendingLength = 0,
 					i, l, apiObj;
 
+				if (!scope.loadingConfig.text) {
+                    scope.loadingConfig.text = 'Processing, please wait.';
+				}
 				scope.isLoading = function () {
 					pendingLength = $http.pendingRequests.length;
 
 					$http.pendingRequests.forEach(function(item){
-						for(i = 0, l = $rootScope.loadingConfig.excludeApis.length; i < l; i++) {
-							apiObj = $rootScope.loadingConfig.excludeApis[i];
+						for(i = 0, l = scope.loadingConfig.excludeApis.length; i < l; i++) {
+							apiObj = scope.loadingConfig.excludeApis[i];
 							if(item.url === apiObj.url && item.method === apiObj.method.toUpperCase()) {
 								pendingLength--;
 							}
@@ -38,11 +44,11 @@ module.exports = function(mod) {
 				scope.$watch(scope.isLoading, function (v) {
 					if(v){
 						$(elm).show();
-                        if (typeof $rootScope.loadingConfig.timeout === 'number' &&
-                            typeof $rootScope.loadingConfig.timeoutCallback === 'function') {
+                        if (typeof scope.loadingConfig.timeout === 'number' &&
+                            typeof scope.loadingConfig.timeoutCallback === 'function') {
                             $timeout(function() {
-                                    $rootScope.loadingConfig.timeoutCallback();
-                            }, $rootScope.loadingConfig.timeout);
+                                    scope.loadingConfig.timeoutCallback();
+                            }, scope.loadingConfig.timeout);
                         }
 					}else{
                         $(elm).hide();

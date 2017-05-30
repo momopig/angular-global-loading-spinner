@@ -1,11 +1,12 @@
 var demo = angular.module('demo', ['globalLoading']);
 
-// it suggests that the loadingConifg declare in global code area
+// It suggests that the loadingConifg declare in global code area, as a attribute of $rootScope
 demo.config(['$httpProvider', function($httpProvider) {
 
-    //inject $rootScope in interceptors, unable to inject in app's config function
+    // Inject $rootScope in interceptors, unable to inject in app's config function
     $httpProvider.interceptors.push(function ($rootScope) {
         $rootScope.loadingConfig = {
+            text: 'Processing, please wait...',
             excludeApis: [{method: 'get', url: '/api/site/entry'}],	// 站点列表页面,需要5s轮询该接口以刷新列表, loading 样式也会5s显示一次，影响用户体验，所以排除该loading
             timeout: 5000,
             timeoutCallback: function () {
