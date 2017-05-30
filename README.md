@@ -50,7 +50,7 @@
     });
     }]);
 
-### Send a http Request
+### 3.Send a http Request
 #### JS Code
     demo.controller("DemoController", ['$scope', '$http', '$rootScope', function ($scope, $http) {
 
