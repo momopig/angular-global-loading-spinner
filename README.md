@@ -2,7 +2,7 @@
 [click here to the demo](http://jsrun.net/GhYKp/show)
 
 ## Description
-+ Angular-global-loading is a directive that will **detect all the http requests**. When a http request is sent, the loading spinner will show automatically, and disappears automatically as soon as the request finishes, and you can exclude the requests that you want to ingnore. It makes the code clean and simple.
++ Angular-global-loading is a directive that will **detect all the http requests**. When a http request is sent, the loading spinner will show automatically, and disappears automatically as soon as the request finishes, and you can exclude the requests that you want to ignore. It makes the code clean and simple.
 + The angular version is **1.x**
 
 ## Usage
