@@ -2,8 +2,8 @@
 [click here to the demo](http://jsrun.net/GhYKp/show)
 
 ## Description
-+ Angular-global-loading is a directive that will ** detect  the http request **. When a http request is sended, the loading tips will show automatically.
-+ The angular version is *** 1.x ***
++ Angular-global-loading is a directive that will **detect all the http requests**. When a http request is sent, the loading spinner will show automatically, and disappears automatically as soon as the request finishes, and you can exclude the requests that you want to ingnore. It makes the code clean and simple.
++ The angular version is **1.x**
 
 ## Usage
 ### 1. import the libs(Jquery, angular and the current directive)
@@ -99,5 +99,5 @@
         </div>
 
 ## Deployment
-+ npm install
-+ gulp demo
+1. npm install
+2. gulp demo
