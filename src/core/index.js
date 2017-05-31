@@ -2,7 +2,6 @@ var tpl = require('./index.html');
 var style = require('./index.css');
 
 module.exports = function(mod) {
-
 	mod.directive('globalLoading', ['$http', '$timeout', function($http, $timeout) {
 		return {
 			restrict: 'EA',
@@ -14,16 +13,16 @@ module.exports = function(mod) {
 			},
 			link: function (scope, elm, attrs) {
 
-				var pendingLength = 0,
-					i, l, apiObj;
-				console.log(elm);
+				var pendingLength = 0;
+				var i, l;
+				var apiObj;
 				scope.isShow = false;
+
 				if (!scope.loadingConfig.text) {
                     scope.loadingConfig.text = 'Processing, please wait.';
 				}
 				scope.isLoading = function () {
 					pendingLength = $http.pendingRequests.length;
-
 					$http.pendingRequests.forEach(function(item){
 						for(i = 0, l = scope.loadingConfig.excludeApis.length; i < l; i++) {
 							apiObj = scope.loadingConfig.excludeApis[i];
@@ -34,8 +33,6 @@ module.exports = function(mod) {
 					});
 					return pendingLength > 0;
 				};
-
-
 
 				/*
 				*  isLoading fn  gets called multiple times per digest,
