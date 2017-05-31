@@ -16,7 +16,8 @@ module.exports = function(mod) {
 
 				var pendingLength = 0,
 					i, l, apiObj;
-
+				console.log(elm);
+				scope.isShow = false;
 				if (!scope.loadingConfig.text) {
                     scope.loadingConfig.text = 'Processing, please wait.';
 				}
@@ -43,7 +44,7 @@ module.exports = function(mod) {
 				* */
 				scope.$watch(scope.isLoading, function (v) {
 					if(v){
-						$(elm).show();
+                        scope.isShow = true;
                         if (typeof scope.loadingConfig.timeout === 'number' &&
                             typeof scope.loadingConfig.timeoutCallback === 'function') {
                             $timeout(function() {
@@ -51,7 +52,7 @@ module.exports = function(mod) {
                             }, scope.loadingConfig.timeout);
                         }
 					}else{
-                        $(elm).hide();
+                        scope.isShow = false;
 					}
 				});
 			}

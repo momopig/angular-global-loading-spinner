@@ -32,7 +32,6 @@
     "webpack": "^1.13.1"
   },
   "dependencies": {
-    "angular": "1.5.8",
-    "jquery": "1.12.4"
+    "angular": "1.5.8"
   }
 }
