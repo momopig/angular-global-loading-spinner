@@ -1,7 +1,7 @@
 
 var angular = require('angular');
-var globalLoading = angular.module('globalLoading', []);
-require('./core/index.js')(globalLoading);
+var loadingSpinner = angular.module('loadingSpinner', []);
+require('./core/index.js')(loadingSpinner);
 module.exports = {
-    globalLoading: globalLoading
+    loadingSpinner: loadingSpinner
 };

@@ -7,7 +7,7 @@ module.exports = {
     },
     output: {
         path: path.join(__dirname, "src/.dist_js"),
-        filename: "angular-global-loading.js",
+        filename: "angular-global-loading-spinner.js",
         libraryTarget: 'umd',
     },
     module: {

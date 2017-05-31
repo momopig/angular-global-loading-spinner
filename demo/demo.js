@@ -1,4 +1,4 @@
-var demo = angular.module('demo', ['globalLoading']);
+var demo = angular.module('demo', ['loadingSpinner']);
 
 // It suggests that the loadingConifg declare in global code area, as a attribute of $rootScope
 demo.config(['$httpProvider', function($httpProvider) {

@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html ng-app="demo">
 <head>
-    <title>angular-global-loading</title>
+    <title>angular-global-loading-spinner</title>
     <link rel="stylesheet" type="text/css" href="demo.css"/>
 </head>
 <body>
     <div class="main" ng-controller="DemoController">
-        <global-loading  loading-config="loadingConfig" ></global-loading>
+        <loading-spinner  loading-config="loadingConfig" ></loading-spinner>
         <div>＊＊ In order to  observe the effect of experiment in a better way, you should turn on the network tab of console  ＊＊</div>
         <div>
             <button ng-click="sendHttpRequest()">1. send a http request(ps：set the timeout config as 5s, the timeout msgs will be shown in console)</button>
@@ -19,7 +19,7 @@
         </div>
     </div>
     <script type="text/javascript" src="angular/angular.min.js"></script>
-    <script type="text/javascript" src="js/angular-global-loading.js"></script>
+    <script type="text/javascript" src="js/angular-global-loading-spinner.js"></script>
     <script type="text/javascript" src="demo.js"></script>
 </body>
 </html>

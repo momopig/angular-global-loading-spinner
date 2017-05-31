@@ -1,4 +1,4 @@
-.loading-spiner-holder {
+.loading-spinner-holder {
     position: fixed;
     top: 0;
     right: 0;
@@ -10,7 +10,7 @@
     height: 100%;
 }
 
-.loading-spiner {
+.loading-spinner {
     position: absolute;
     top: 30%;
     left: 50%;

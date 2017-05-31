@@ -2,7 +2,7 @@ var tpl = require('./index.html');
 var style = require('./index.css');
 
 module.exports = function(mod) {
-	mod.directive('globalLoading', ['$http', '$timeout', function($http, $timeout) {
+	mod.directive('loadingSpinner', ['$http', '$timeout', function($http, $timeout) {
 		return {
 			restrict: 'EA',
 			replace: true,
