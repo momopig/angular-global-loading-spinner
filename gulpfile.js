@@ -15,7 +15,7 @@ var proxy = require('http-proxy-middleware');
 var jsSrc = './src/.dist_js/*.js',
     jsSrcMap = './src/.dist_js/*.map',
     jsDist = './dist/js',
-
+    publishDist = './publish/dist',
     condition = false;
 
 
@@ -45,12 +45,14 @@ gulp.task('devJs', function () {
     return gulp.src(jsSrc)
         .pipe(gulpif(condition, rev()))
         .pipe(gulp.dest(jsDist))
+        .pipe(gulp.dest(publishDist))
         .pipe(gulpif(condition, rev.manifest()))
         .pipe(gulpif(condition, gulp.dest('./src/.rev/js')));
 });
 gulp.task('devJsSourceMap', function() {
     return gulp.src(jsSrcMap)
-        .pipe(gulp.dest(jsDist));
+        .pipe(gulp.dest(jsDist))
+        .pipe(gulp.dest(publishDist));
 })
 
 //对文件修改的舰艇，实现修改即自动编译

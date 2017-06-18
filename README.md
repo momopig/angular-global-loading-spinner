@@ -10,7 +10,7 @@
 	<!DOCTYPE html>
 	<html ng-app="demo">
     <head>
-        <title>angular-global-loading</title>
+        <title>angular-global-loading-spinner</title>
     </head>
     <body>
         <div class="main" ng-controller="DemoController">
@@ -18,7 +18,7 @@
          </div>
         <script type="text/javascript" src="jquery/dist/jquery.min.js"></script>
         <script type="text/javascript" src="angular/angular.min.js"></script>
-        <script type="text/javascript" src="js/angular-global-loading.js"></script>
+        <script type="text/javascript" src="js/angular-global-loading-spinner.js"></script>
         <script type="text/javascript" src="demo.js"></script>
     </body>
     </html>

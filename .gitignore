@@ -1,6 +1,7 @@
-src/.dist_js
+dist
+node_modules
 .idea
 .DS_Store
 src/.rev
-node_modules
+src/.dist_js/*
 
