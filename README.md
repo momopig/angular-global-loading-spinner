@@ -2,11 +2,13 @@
 [click here to the demo](http://jsrun.net/GhYKp/show)
 
 ## Description
-+ Angular-global-loading is a directive that will **detect all the http requests**. When a http request is sent, the loading spinner will show automatically, and disappears automatically as soon as the request finishes, and you can exclude the requests that you want to ignore. It makes the code clean and simple.
++ Angular-global-loading-spinner is a directive that will **detect all the http requests**. When a http request is sent, the loading spinner will show automatically, and disappears automatically as soon as the request finishes, and you can exclude the requests that you want to ignore. It makes the code clean and simple.
 + The angular version is **1.x**
 
+## Install
+npm install --savel angular-global-loading-spinner
 ## Usage
-### 1. import the libs(Jquery, angular and the current directive)
+### 1. import the libs
 	<!DOCTYPE html>
 	<html ng-app="demo">
     <head>
@@ -16,12 +18,15 @@
         <div class="main" ng-controller="DemoController">
             <global-loading  loading-config="loadingConfig" ></global-loading>
          </div>
-        <script type="text/javascript" src="jquery/dist/jquery.min.js"></script>
         <script type="text/javascript" src="angular/angular.min.js"></script>
         <script type="text/javascript" src="js/angular-global-loading-spinner.js"></script>
         <script type="text/javascript" src="demo.js"></script>
     </body>
     </html>
+or require in webpack entry.js
+<pre>
+	require('angular-global-loading-spinner');
+</pre>
 
 ### 2. Use the globalLoading directive and define loadingConfig Object
     var demo = angular.module('demo', ['globalLoading']);
