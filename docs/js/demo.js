@@ -8,7 +8,7 @@ demo.config(['$httpProvider', function($httpProvider) {
         $rootScope.loadingConfig = {
             text: 'Processing, please wait...',
             // excludeApis: [{method: 'get', url: '/api/site/entry'}],	// 站点列表页面,需要5s轮询该接口以刷新列表, loading 样式也会5s显示一次，影响用户体验，所以排除该loading
-            excludeApis: [{method: 'get', url: 'http://bigdata.sz.haizhi.com/api/search/es_suggest'}],	// 站点列表页面,需要5s轮询该接口以刷新列表, loading 样式也会5s显示一次，影响用户体验，所以排除该loading
+            excludeApis: [{method: 'get', url: 'https://www.google.com/complete/search'}],	// 站点列表页面,需要5s轮询该接口以刷新列表, loading 样式也会5s显示一次，影响用户体验，所以排除该loading
             timeout: 5000,
             timeoutCallback: function () {
                 console.error('request timeout');
@@ -39,9 +39,8 @@ demo.controller("DemoController", ['$scope', '$http', '$rootScope', function ($s
         $http({
             method: 'get',
             // url: '/api/site/seed',
-            url: 'http://bigdata.sz.haizhi.com/api/search/es_suggest?key_word=4&type=_all&count=5&t=1516411062800&_=1516411057020',
+            url: 'https://www.google.com/complete/search?client=psy-ab&hl=zh-CN&gs_rn=64&gs_ri=psy-ab&tok=7h84RBr5T1-RknR5GDq78g&cp=5&gs_id=6c&q=china&xhr=t',
             params: {
-                pageno: 1
             }
         });
     };
@@ -49,11 +48,18 @@ demo.controller("DemoController", ['$scope', '$http', '$rootScope', function ($s
         $http({
             method: 'get',
             // url: '/api/site/entry',
-            url: 'http://bigdata.sz.haizhi.com/api/search/es_suggest',
+            url: 'https://www.google.com/complete/search',
             params: {
-                key_word: 4,
-                type: '_all',
-                count: 5
+                client: 'psy-ab',
+                hl: 'zh-CN',
+                gs_rn: 64,
+                gs_ri: 'psy-ab',
+                gs_mss: '4sdsds',
+                tok: '7h84RBr5T1-RknR5GDq78g',
+                cp: 5,
+                gs_id: 'ym',
+                q: 'Japan',
+                xhr: 't'
             }
         });
     };

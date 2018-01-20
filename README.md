@@ -1,5 +1,5 @@
 ## Demo
-[click here to the demo](http://jsrun.net/GhYKp/show)
+[click here to the demo](https://momopig.github.io/angular-global-loading-spinner/)
 
 ## Description
 + Angular-global-loading-spinner is a directive that will **detect all the http requests**. When a http request is sent, the loading spinner will show automatically, and disappears automatically as soon as the request finishes, and you can exclude the requests that you want to ignore. It makes the code clean and simple.
